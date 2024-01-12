@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h3>Event handling</h3>
+        <button id="btn">Click me</button>
+        <div id="display">
+
+        </div>
+    </div>
+    
+
+    <script>
+        const button = document.getElementById('btn');
+        const display = document.getElementById('display')
+        const childElement = document.createElement("p");
+        const note =["Ajith","Display"];
+        const contentToDisplay = document.createTextNode(note.map((e)=>e));
+
+        childElement.appendChild(contentToDisplay);
+
+        button.addEventListener('click',function(){
+            // alert("Button is clicked");
+            note.unshift("Button to  clicked");
+            display.appendChild(contentToDisplay);
+            console.log(contentToDisplay);
+            console.log(note);
+        })
+
+    </script>
+</body>
+</html>
