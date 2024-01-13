@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Selector</title>
+</head>
+<body>
+    <div id="myDiv">My Text ElementById</div>
+    <div class="myClass">My Text ElementByClassName 1</div>
+    <div class="myClass">My Text ElementByClassName 2</div>
+    <div class="singleClass">My Text for Single class use querySelector</div>
+    <input type="text" placeholder="text input" value="Ajith">
+
+    <script>
+        //1. ElementById
+        const elementById = document.getElementById('myDiv');
+        console.log(elementById.innerHTML);
+
+        // 2. ElementByClassName for multiple elements
+        const elementByClassName = document.getElementsByClassName('myClass');
+        for(let i=0; i<elementByClassName.length; i++){
+            var elements = elementByClassName[i];
+            console.log(elements.innerHTML);
+        }
+
+        // 3. querySelector for single class element
+        const sigleClassEle = document.querySelector('.singleClass');
+            console.log(sigleClassEle.innerHTML);
+
+        // 4. querySelectorAll 
+        const multipleQuerySelector = document.querySelectorAll('.myClass');
+        for(let i=0; i<multipleQuerySelector.length;i++){
+            let elements = multipleQuerySelector[i];
+            console.log(elements.innerHTML);
+        }
+
+        // 5. getElementByTagName 
+        const tagName = document.getElementsByTagName('input');
+
+        for(let i=0; i <tagName.length; i++){
+            let tags = tagName[i];
+            console.log(tags.value);
+        }
+
+        
+
+    </script>
+</body>
+</html>
