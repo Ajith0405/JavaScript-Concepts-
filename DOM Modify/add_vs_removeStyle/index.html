@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add and Remove Style</title>
+
+    <style>
+        .bgColorBlack{
+            background-color: black;
+            color: white;
+        }
+        .bgColorWhite{
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body id="body">
+
+    <div id="box">
+        <p>Text color</p>
+    </div>
+
+    <h3>select Mode dark / light </h3>
+        <input type="checkbox" name="" id="checkbox">
+    
+    <div id="box2" style="width: 100px; height: 100px; border: 1px solid red;">
+        <p>some text</p>
+    </div>
+    <input type="checkbox" name="" id="checkbox2">
+    
+
+    <script>
+        // 1. style property
+            const box = document.getElementById('box');
+
+            box.style.color = 'red';
+        // 2. classList.add() & remove()
+            const body = document.getElementById('body');
+            const checkbox = document.getElementById('checkbox');
+
+            checkbox.addEventListener('change', function (){
+                if(this.checked){
+                    body.classList.add('bgColorBlack');
+                    body.classList.remove('bgColorWhite')
+                }else{
+                    body.classList.add('bgColorWhite');
+                    body.classList.remove('bgColorBlack');
+                }
+                
+            })
+
+        // 3. classList.toggle();
+            const box2 = document.getElementById('box2');
+            const checkbox2 = document.getElementById('checkbox2');
+
+            checkbox2.addEventListener('change', function(){
+                box2.classList.toggle('bgColorBlack')
+            })
+
+
+    </script>
+</body>
+</html>

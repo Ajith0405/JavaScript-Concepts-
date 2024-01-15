@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreateElement vs CloneNode</title>
+</head>
+<body id="body">
+    
+    <div id="parentEle">
+        <p>Parent element</p>
+    </div>
+
+    <script>
+     const body = document.getElementById('body');
+    // 1. Create new Element
+        var newElement = document.createElement('div');
+        newElement.textContent = "newly created element"
+
+        body.appendChild(newElement);
+    
+    // 2. CloneNode
+        var parentEle = document.getElementById('parentEle');
+        var cloneEle = parentEle.cloneNode(true);
+            cloneEle.textContent = 'cloned Elemnet'
+
+        document.body.appendChild(cloneEle);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify DOM Elements</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <h1>Style property modify</h1>
+        <div class="box" style="width: 100px; height: 100px; border: 2px solid black;">
+        </div>
+    
+        <select name="color" id="colorSelect">
+            <option value=""> Slect color </option>
+            <option value="black">Black</option>
+            <option value="red">Red</option>
+            <option value="yellow">Yellow</option>
+        </select>
+    </div>
+    <div>
+        <h1>SetAttribute and Remove attribute</h1>
+        <div>
+            <a href="#" id="home" class="selected">Home</a>
+            <a href="#" id="about">About</a>
+            <a href="#" id="contact">Conatct</a>
+        </div>
+    </div>
+   
+
+    <script>
+        // 1. Style property Modify
+            const box = document.querySelector('.box');
+            const colorSelect = document.getElementById('colorSelect');
+
+            colorSelect.addEventListener('change',function(){
+                box.style.backgroundColor = colorSelect.value;
+            })
+        
+        //2. setArribute and RemoveAttribute
+            const home = document.getElementById('home');
+            const about = document.getElementById('about');
+            const contact = document.getElementById('contact');
+
+            home.addEventListener('click', function(){
+                home.setAttribute('class','selected');
+                about.removeAttribute('class');
+                contact.removeAttribute('class');
+            });
+
+            about.addEventListener('click', function(){
+                about.setAttribute('class','selected');
+                home.removeAttribute('class');
+                contact.removeAttribute('class');
+            });
+
+            contact.addEventListener('click', function(){
+                contact.setAttribute('class','selected');
+                about.removeAttribute('class');
+                home.removeAttribute('class');
+            });
+
+
+    </script>
+</body>
+</html>

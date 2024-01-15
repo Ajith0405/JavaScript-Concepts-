@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerHTML vs textContent</title>
+</head>
+<body>
+    <div id="element1">Hello</div>
+    <div id="element2">Hello</div>
+
+    <script>
+        const element1 = document.getElementById('element1');
+        const element2 = document.getElementById('element2');
+
+        element1.textContent = "<strong> Happy </strong>";
+        element2.innerHTML ="<strong> Happy </strong>";
+    </script>
+</body>
+</html>

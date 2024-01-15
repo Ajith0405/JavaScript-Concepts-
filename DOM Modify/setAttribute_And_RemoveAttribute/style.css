@@ -1,0 +1,12 @@
+a{
+    text-decoration: none;
+    color: black;
+    padding: 10px 15px;
+    border: 1px solid black;
+}
+
+.selected{
+    background-color: gray;
+    color: white;
+    font-weight: 600;
+}
